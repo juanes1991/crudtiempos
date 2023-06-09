@@ -7,7 +7,7 @@
             <h2>Crear Tiempo</h2>
         </div>
         <div>
-            <a href="{{route('tiempos.index')}}" class="btn btn-primary">Volver</a>
+            <a href="{{route('times.index')}}" class="btn btn-primary">Volver</a>
         </div>
     </div>
     
@@ -23,7 +23,7 @@
     </div>
 @endif
 
-    <form action="{{route('tiempos.store')}}" method="POST">
+    <form action="{{route('times.store')}}" method="POST">
 
         @csrf
         <div class="row">
@@ -37,13 +37,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
                 <div class="form-group">
                     <strong>Inicio:</strong>
-                    <input type="text" name="inicio" class="form-control" placeholder="inicio" >
+                    <input type="datetime-local" name="inicio" class="form-control" placeholder="inicio" >
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">
                 <div class="form-group">
                     <strong>Fin:</strong>
-                    <input type="text" name="fin" class="form-control" placeholder="fin" >
+                    <input type="datetime-local" name="fin" class="form-control" placeholder="fin" >
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 mt-2">

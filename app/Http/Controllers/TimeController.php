@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tiempo;
+use App\Models\Time;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class TiempoController extends Controller
+class TimeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $tiempos = Tiempo::latest()->paginate(7);
-        return view('index', ['tiempos' => $tiempos]);
+        $times = Time::latest()->paginate(7);
+        return view('index', ['times' => $times]);
     }
 
     /**
@@ -34,14 +34,14 @@ class TiempoController extends Controller
         //     'user_id' => 'required',
         // ])
 
-        Tiempo::create($request->all());
-        return redirect()->route('tiempos.index')->with('success', 'nuevo tiempo creado con exito');
+        Time::create($request->all());
+        return redirect()->route('times.index')->with('success', 'nuevo tiempo creado con exito');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Tiempo $tiempo)
+    public function show(Time $time)
     {
         //
     }
@@ -49,27 +49,27 @@ class TiempoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tiempo $tiempo)
+    public function edit(Time $time)
     {
-        return view('edit', ['tiempo' => $tiempo]);
+        return view('edit', ['time' => $time]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Tiempo $tiempo): RedirectResponse
+    public function update(Request $request, Time $time): RedirectResponse
     {
-        $tiempo->update($request->all());
-        return redirect()->route('tiempos.index')->with('success', 'tiempo editado con exito');
+        $time->update($request->all());
+        return redirect()->route('times.index')->with('success', 'tiempo editado con exito');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Tiempo $tiempo): RedirectResponse
+    public function destroy(Time $time): RedirectResponse
     {
-        $tiempo->delete();
-        return redirect()->route('tiempos.index')->with('success', 'tiempo borrado correctamente');
+        $time->delete();
+        return redirect()->route('times.index')->with('success', 'tiempo borrado correctamente');
 
 
     }

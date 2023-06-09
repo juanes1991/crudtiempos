@@ -7,7 +7,7 @@
             <h2 class="text-white">CRUD DE TIEMPOS</h2>
         </div>
         <div>
-            <a href="{{route('tiempos.create')}}" class="btn btn-primary">Crear tiempo</a>
+            <a href="{{route('times.create')}}" class="btn btn-primary">Crear tiempo</a>
         </div>
     </div>
 
@@ -33,18 +33,18 @@
                 <th>Minutos</th>
             </tr>
 
-            @foreach ($tiempos as $tiempo)
+            @foreach ($times as $time)
 
             <tr>
-                <td class="fw-bold">{{$tiempo->user_id}}</td>
-                <td class="fw-bold">{{$tiempo->inicio}}</td>
-                <td class="fw-bold">{{$tiempo->fin}}</td>
-                <td class="fw-bold">{{$tiempo->envivo}}</td>
-                <td class="fw-bold">{{$tiempo->minutos}}</td>
+                <td class="fw-bold">{{$time->user_id}}</td>
+                <td class="fw-bold">{{$time->inicio}}</td>
+                <td class="fw-bold">{{$time->fin}}</td>
+                <td class="fw-bold">{{$time->envivo}}</td>
+                <td class="fw-bold">{{$time->minutos}}</td>
                 <td>
-                    <a href="{{route('tiempos.edit', $tiempo)}}" class="btn btn-warning">Editar</a>
+                    <a href="{{route('times.edit', $time)}}" class="btn btn-warning">Editar</a>
 
-                    <form action="{{route('tiempos.destroy', $tiempo)}}" method="POST" class="d-inline">
+                    <form action="{{route('times.destroy', $time)}}" method="POST" class="d-inline">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Eliminar</button>
@@ -58,7 +58,7 @@
             
         </table>
 
-        {{$tiempos->links()}}
+        {{$times->links()}}
     </div>
 </div>
 @endsection

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TiempoController;
+use App\Http\Controllers\TimeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('tiempos', TiempoController::class);
+Route::resource('times', TimeController::class);
