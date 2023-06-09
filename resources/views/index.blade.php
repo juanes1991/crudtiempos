@@ -1,6 +1,11 @@
+
+
 @extends('layouts.base')
 
 @section('content')
+
+
+
 <div class="row">
     <div class="col-12">
         <div>
@@ -8,6 +13,7 @@
         </div>
         <div>
             <a href="{{route('times.create')}}" class="btn btn-primary">Crear tiempo</a>
+            <a href="{{route('dashboard')}}" class="btn btn-primary">ir al dashboard</a>
         </div>
     </div>
 
@@ -61,4 +67,5 @@
         {{$times->links()}}
     </div>
 </div>
+
 @endsection
