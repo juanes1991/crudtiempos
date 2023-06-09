@@ -30,9 +30,14 @@ class TimeController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // $request->validate([
-        //     'user_id' => 'required',
-        // ])
+        $request->validate([
+            'user_id' => 'required',
+            'inicio' => 'required',
+            'fin' => 'required',
+            'envivo' => 'required',
+            'minutos' => 'required',
+
+        ]);
 
         Time::create($request->all());
         return redirect()->route('times.index')->with('success', 'nuevo tiempo creado con exito');
@@ -59,6 +64,16 @@ class TimeController extends Controller
      */
     public function update(Request $request, Time $time): RedirectResponse
     {
+
+        $request->validate([
+            'user_id' => 'required',
+            'inicio' => 'required',
+            'fin' => 'required',
+            'envivo' => 'required',
+            'minutos' => 'required',
+
+        ]);
+
         $time->update($request->all());
         return redirect()->route('times.index')->with('success', 'tiempo editado con exito');
     }
